@@ -8,16 +8,16 @@
     .item-all {
         background-color: red;
         display: grid;
-        width: 1200px;
-        grid-template-columns: repeat(4, 250px);
-        grid-template-rows: 200px repeat(3, 150px);
+        width: 900px;
+        grid-template-columns: repeat(4, 200px);
+        grid-template-rows: 100px repeat(3, 150px);
         grid-template-areas:
         "i1 i2 i3 i4"
         "i5 i6 i7 i8"
         "i5 i6 i7 i8"
         "i5 i6 i7 i8";
         
-        grid-column-gap: 10px;
+        grid-column-gap: 0px;
         grid-row-gap: 10px;
         justify-content: space-around;    
     }
@@ -54,19 +54,68 @@
         grid-area: i8;   
     }
 
+    /* Actividades */
 
+    .acts {
+        display: inline-block;
+    }
+    .act1, .act2, .act3, .act4, .act5, .act6 {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        margin: 10px;
+        padding: 20px;
+    }
     .act1 {
-        
-        background-color:lightsalmon;
-        width: 180px;
-        height: 180px;
-        margin: 35px 35px;
-
+        background-color:black;
+    }
+    .act2 {
+        background-color: blueviolet;
+    }
+    .act3 {
+        background-color:cornflowerblue;
+    }
+    .act4 {
+        background-color:darkslategray ;
+    }
+    .act5 {
+        background-color:darkgrey;
     }
 
+    #target {
+        position: relative;
+        background-color: white;
+        height: 160px;
+        width: 160px;
+        margin: 10px;
+        padding: 10px;
+    }
+
+
+    
+
+
+
     </style>
+<script>
+        function allowDrop(ev) { 
+        ev.preventDefault();
+    }
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.acts').addEventListener('dragstart', drag)
+    })
+  </script>
 </head>
 <body>
+
 
 <div class="item-all">
     <div class="item1">1 Tareas</div>
@@ -74,13 +123,35 @@
     <div class="item3">3 En curso</div>
     <div class="item4">4 Terminado</div>
 
-    <div class="item5">
-        <div class='act1'></div>
+    <div class="item5">5
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
     </div>
-    <div class="item6">6</div>
-    <div class="item7">7</div>
-    <div class="item8">8</div>
+    <div class="item6">6
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    </div>
+    <div class="item7">7
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    </div>
+    <div class="item8">8
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    </div>
+
+    <div class='acts'>
+            <div id="draggable1" class="act1" draggable="true"></div>
+            <div id="draggable2" class="act2" draggable="true"></div>
+            <div id="draggable3" class="act3" draggable="true"></div>
+            <div id="draggable4" class="act4" draggable="true"></div>
+            <div id="draggable5" class="act5" draggable="true"></div>
+            
+    </div>
 </div>
+
+
+
 
 </body>
 </html>
