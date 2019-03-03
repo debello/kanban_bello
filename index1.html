@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> 
+    <title>Bello's Kanban</title>
+    <style>
+
+    .item-all {
+        background-color: red;
+        display: grid;
+        width: 1200px;
+        grid-template-columns: repeat(4, 250px);
+        grid-template-rows: 200px repeat(3, 150px);
+        grid-template-areas:
+        "i1 i2 i3 i4"
+        "i5 i6 i7 i8"
+        "i5 i6 i7 i8"
+        "i5 i6 i7 i8";
+        
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        justify-content: space-around;    
+    }
+    .item1 {
+        background-color: blue;
+        grid-area: i1;    
+    }
+    .item2 {
+        background-color: green;
+        grid-area: i2;   
+    }
+    .item3 {
+        background-color: yellow;
+        grid-area: i3;   
+    }
+    .item4 {
+        background-color: orange;
+        grid-area: i4;    
+    }
+    .item5 {
+        background-color: aquamarine;
+        grid-area: i5;    
+    }
+    .item6 {
+        background-color: violet;
+        grid-area: i6;    
+    }
+    .item7 {
+        background-color: brown; 
+        grid-area: i7;   
+    }
+    .item8 {
+        background-color: chartreuse; 
+        grid-area: i8;   
+    }
+
+
+    .act1 {
+        
+        background-color:lightsalmon;
+        width: 180px;
+        height: 180px;
+        margin: 35px 35px;
+
+    }
+
+    </style>
+</head>
+<body>
+
+<div class="item-all">
+    <div class="item1">1 Tareas</div>
+    <div class="item2">2 En espera</div>
+    <div class="item3">3 En curso</div>
+    <div class="item4">4 Terminado</div>
+
+    <div class="item5">
+        <div class='act1'></div>
+    </div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+</div>
+
+</body>
+</html>
