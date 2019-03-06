@@ -82,7 +82,7 @@
         background-color:darkgrey;
     }
 
-    #target {
+    #target, #target1, #target2, #target3, #target4 {
         position: relative;
         background-color: white;
         height: 160px;
@@ -98,8 +98,8 @@
 
     </style>
 <script>
-        function allowDrop(ev) { 
-        ev.preventDefault();
+    function allowDrop(ev) { 
+    ev.preventDefault();
     }
     function drag(ev) {
         ev.dataTransfer.setData("text", ev.target.id);
@@ -124,20 +124,20 @@
     <div class="item4">4 Terminado</div>
 
     <div class="item5">5
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target1' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target2' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
     </div>
     <div class="item6">6
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target3' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target4' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
     </div>
     <div class="item7">7
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target5' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target6' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
     </div>
     <div class="item8">8
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target7' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+        <div id='target8' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
     </div>
 
     <div class='acts'>
