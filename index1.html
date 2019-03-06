@@ -108,6 +108,7 @@
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text");
         ev.target.appendChild(document.getElementById(data));
+        
     }
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.acts').addEventListener('dragstart', drag)
