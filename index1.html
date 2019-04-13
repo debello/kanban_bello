@@ -5,82 +5,93 @@
     <title>Bello's Kanban</title>
     <style>
 
-    .item-all {
+
+    .item-all, .buta {
         background-color: red;
         display: grid;
         width: 900px;
-        grid-template-columns: repeat(4, 200px);
-        grid-template-rows: 100px repeat(3, 150px);
+        grid-template-columns: repeat(4, 200px) 0px;
+        grid-template-rows: 100px repeat(3, 150fr);
         grid-template-areas:
-        "i1 i2 i3 i4"
-        "i5 i6 i7 i8"
-        "i5 i6 i7 i8"
-        "i5 i6 i7 i8";
+        "i1 i2 i3 i4 ghost"
+        "i5 i6 i7 i8 ghost"
+        "i5 i6 i7 i8 ghost"
+        "i5 i6 i7 i8 ghost";
         
         grid-column-gap: 0px;
         grid-row-gap: 10px;
         justify-content: space-around;    
     }
-    .item1 {
-        background-color: blue;
-        grid-area: i1;    
-    }
-    .item2 {
-        background-color: green;
-        grid-area: i2;   
-    }
-    .item3 {
-        background-color: yellow;
-        grid-area: i3;   
-    }
-    .item4 {
-        background-color: orange;
-        grid-area: i4;    
-    }
-    .item5 {
-        background-color: aquamarine;
-        grid-area: i5;    
-    }
-    .item6 {
-        background-color: violet;
-        grid-area: i6;    
-    }
-    .item7 {
-        background-color: brown; 
-        grid-area: i7;   
-    }
-    .item8 {
-        background-color: chartreuse; 
-        grid-area: i8;   
-    }
+        .ghost {
+            grid-area: ghost;
+        }
+        .item1 {
+            background-color: blue;
+            grid-area: i1;    
+        }
+        .item2 {
+            background-color: green;
+            grid-area: i2;   
+        }
+        .item3 {
+            background-color: yellow;
+            grid-area: i3;   
+        }
+        .item4 {
+            background-color: orange;
+            grid-area: i4;    
+        }
+        .item5 {
+            background-color: aquamarine;
+            
+            
+            grid-area: i5;    
+        }
+        .item6 {
+            background-color: violet;
+            grid-area: i6;
+        }
+        .item7 {
+            background-color: brown; 
+            grid-area: i7;
+        }
+        .item8 {
+            background-color: chartreuse; 
+            grid-area: i8; 
+        }
 
+    .relleno {
+        width: 150px;
+        height: 500px;
+    }
     /* Actividades */
 
     .acts {
         display: inline-block;
+        margin-top: 100px;
     }
-    .act1, .act2, .act3, .act4, .act5, .act6 {
-        position: relative;
-        height: 100px;
-        width: 100px;
-        margin: 10px;
-        padding: 20px;
-    }
-    .act1 {
-        background-color:black;
-    }
-    .act2 {
-        background-color: blueviolet;
-    }
-    .act3 {
-        background-color:cornflowerblue;
-    }
-    .act4 {
-        background-color:darkslategray ;
-    }
-    .act5 {
-        background-color:darkgrey;
-    }
+        .act1, .act2, .act3, .act4, .act5, .act6 {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            margin: 30px;
+            padding: 20px;
+        }
+        .act1 {
+            background-color:black;
+        }
+        .act2 {
+            background-color: blueviolet;
+        }
+        .act3 {
+            background-color:cornflowerblue;
+        }
+        .act4 {
+            background-color:darkslategray ;
+        }
+        .act5 {
+            background-color:darkgrey;
+        }
 
     #target, #target1, #target2, #target3, #target4 {
         position: relative;
@@ -116,40 +127,53 @@
   </script>
 </head>
 <body>
+    <!--
+    <section id="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="padre">
+           <div class="tipo" id="fuego" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+           <div class="tipo" id="agua" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <img class="pokemon" src="http://i65.tinypic.com/j0itlk.png" draggable="true" ondragstart="drag(event)" id="drag1"/>
+        <img class="pokemon" src="http://i65.tinypic.com/214vxts.png" draggable="true" ondragstart="drag(event)" id="drag2"/>
+        <img class="pokemon" src="http://i66.tinypic.com/ckf41.jpg" draggable="true" ondragstart="drag(event)" id="drag3"/>
+        <img class="pokemon" src="http://i66.tinypic.com/2nq5pp3.png" draggable="true" ondragstart="drag(event)" id="drag4"/>
+      </section>
+      <div id="resultado">...</div>
+      -->
 
-
-<div class="item-all">
+<div class="item-all" >
     <div class="item1">1 Tareas</div>
     <div class="item2">2 En espera</div>
     <div class="item3">3 En curso</div>
     <div class="item4">4 Terminado</div>
 
-    <div class="item5">5
-        <div id='target1' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target2' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    <div class="item5" ondrop="drop(event)" ondragover="allowDrop(event)">5
+        
     </div>
-    <div class="item6">6
-        <div id='target3' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target4' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    <div class="item6" ondrop="drop(event)" ondragover="allowDrop(event)">6
+        
+        
     </div>
-    <div class="item7">7
-        <div id='target5' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target6' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    <div class="item7" ondrop="drop(event)" ondragover="allowDrop(event)">7
+        
+        
     </div>
-    <div class="item8">8
-        <div id='target7' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
-        <div id='target8' ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+    <div class="item8" ondrop="drop(event)" ondragover="allowDrop(event)">8
+        
+        
     </div>
+    <div class="ghost">  <div class='relleno'></div></div>
 
     <div class='acts'>
-            <div id="draggable1" class="act1" draggable="true"></div>
-            <div id="draggable2" class="act2" draggable="true"></div>
-            <div id="draggable3" class="act3" draggable="true"></div>
-            <div id="draggable4" class="act4" draggable="true"></div>
-            <div id="draggable5" class="act5" draggable="true"></div>
+            <div id="draggable1" class="act1" draggable="true" ondragstart="drag(event)" ></div>
+            <div id="draggable2" class="act2" draggable="true" ondragstart="drag(event)" ></div>
+            <div id="draggable3" class="act3" draggable="true" ondragstart="drag(event)" ></div>
+            <div id="draggable4" class="act4" draggable="true" ondragstart="drag(event)" ></div>
+            <div id="draggable5" class="act5" draggable="true" ondragstart="drag(event)" ></div>
             
     </div>
 </div>
+
 
 
 
