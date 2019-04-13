@@ -6,12 +6,12 @@
     <style>
 
 
-    .item-all, .buta {
-        background-color: red;
+    .item-all {
+        /* background-color: red; */
         display: grid;
         width: 900px;
         grid-template-columns: repeat(4, 200px) 0px;
-        grid-template-rows: 100px repeat(3, 150fr);
+        grid-template-rows: 100px repeat(3, 280fr);
         grid-template-areas:
         "i1 i2 i3 i4 ghost"
         "i5 i6 i7 i8 ghost"
@@ -20,50 +20,53 @@
         
         grid-column-gap: 0px;
         grid-row-gap: 10px;
-        justify-content: space-around;    
+        justify-content: space-around; 
+           
     }
         .ghost {
             grid-area: ghost;
         }
+        .relleno {
+            width: 150px;
+            height: 480px;
+        }
+        .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 {
+            border-radius: 15px;
+        }
+
         .item1 {
-            background-color: blue;
+            background-color: cornflowerblue;
             grid-area: i1;    
         }
         .item2 {
-            background-color: green;
+            background-color: cornflowerblue;
             grid-area: i2;   
         }
         .item3 {
-            background-color: yellow;
+            background-color: cornflowerblue;
             grid-area: i3;   
         }
         .item4 {
-            background-color: orange;
+            background-color: cornflowerblue;
             grid-area: i4;    
         }
         .item5 {
             background-color: aquamarine;
-            
-            
             grid-area: i5;    
         }
         .item6 {
-            background-color: violet;
+            background-color: aquamarine;
             grid-area: i6;
         }
         .item7 {
-            background-color: brown; 
+            background-color: aquamarine; 
             grid-area: i7;
         }
         .item8 {
-            background-color: chartreuse; 
+            background-color: aquamarine; 
             grid-area: i8; 
         }
 
-    .relleno {
-        width: 150px;
-        height: 500px;
-    }
     /* Actividades */
 
     .acts {
@@ -76,18 +79,20 @@
             width: 100px;
             margin: 30px;
             padding: 20px;
+            border-radius: 5px;
         }
         .act1 {
-            background-color:black;
+            
+            background-color: green;
         }
         .act2 {
-            background-color: blueviolet;
+            background-color:yellow;
         }
         .act3 {
-            background-color:cornflowerblue;
+            background-color:orange ;
         }
         .act4 {
-            background-color:darkslategray ;
+            background-color: black;
         }
         .act5 {
             background-color:darkgrey;
@@ -102,7 +107,16 @@
         padding: 10px;
     }
 
-
+    /* Style */
+    .item-all p {
+        font-size: 30px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+        .acts p {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
     
 
 
@@ -141,34 +155,37 @@
       <div id="resultado">...</div>
       -->
 
-<div class="item-all" >
-    <div class="item1">1 Tareas</div>
-    <div class="item2">2 En espera</div>
-    <div class="item3">3 En curso</div>
-    <div class="item4">4 Terminado</div>
+<div class="item-all"  ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div class="item1"><p>Tareas</p></div>
+    <div class="item2"><p>En espera</p></div>
+    <div class="item3"><p>En curso</p></div>
+    <div class="item4"><p>Terminado</p></div>
 
-    <div class="item5" ondrop="drop(event)" ondragover="allowDrop(event)">5
+    <div class="item5" ondrop="drop(event)" ondragover="allowDrop(event)">
         
     </div>
-    <div class="item6" ondrop="drop(event)" ondragover="allowDrop(event)">6
+    <div class="item6" ondrop="drop(event)" ondragover="allowDrop(event)">
+        
+    </div>
+    <div class="item7" ondrop="drop(event)" ondragover="allowDrop(event)">
         
         
     </div>
-    <div class="item7" ondrop="drop(event)" ondragover="allowDrop(event)">7
-        
-        
-    </div>
-    <div class="item8" ondrop="drop(event)" ondragover="allowDrop(event)">8
+    <div class="item8" ondrop="drop(event)" ondragover="allowDrop(event)">
         
         
     </div>
     <div class="ghost">  <div class='relleno'></div></div>
 
     <div class='acts'>
-            <div id="draggable1" class="act1" draggable="true" ondragstart="drag(event)" ></div>
-            <div id="draggable2" class="act2" draggable="true" ondragstart="drag(event)" ></div>
-            <div id="draggable3" class="act3" draggable="true" ondragstart="drag(event)" ></div>
-            <div id="draggable4" class="act4" draggable="true" ondragstart="drag(event)" ></div>
+            <div id="draggable1" class="act1" draggable="true" ondragstart="drag(event)" >
+            <p>Doing Stuff</p></div>
+            <div id="draggable2" class="act2" draggable="true" ondragstart="drag(event)" >
+            <p>Khan</p></div>
+            <div id="draggable3" class="act3" draggable="true" ondragstart="drag(event)" >
+            <p>Disolver</p></div>
+            <div id="draggable4" class="act4" draggable="true" ondragstart="drag(event)" >
+            <p></p></div>
             <div id="draggable5" class="act5" draggable="true" ondragstart="drag(event)" ></div>
             
     </div>
